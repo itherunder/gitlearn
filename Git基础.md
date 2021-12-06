@@ -15,4 +15,11 @@ git diff --cached: 和--staged一样
 git log -p(查看详细diff) -2(查看最近两次的提交) --stat(每个历史提交的小总结) --since=2.weeks(最近两周的)
 
 ## 撤销
-git commit --amend: 用来在commit之后发现少添加了文件或者commit信息写错了
+git commit --amend: 用来在commit之后发现commit信息写错了
+如果发现少添加了文件或者啥的，如下操作：
+```bash
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+```
+最终你只会有一个提交——第二次提交将代替第一次提交的结果。
