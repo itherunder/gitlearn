@@ -23,3 +23,5 @@ $ git add forgotten_file
 $ git commit --amend
 ```
 最终你只会有一个提交——第二次提交将代替第一次提交的结果。
+git reset HEAD <file>...: 取消暂存(从staged->untracked or modified(before status))，还不知道和git restore --staged 有什么区别（git reset是一个很危险的操作，特别是加上--hard之后）
+git checkout -- <file>...: 取消某个文件的修改（modified->unmodified），回将这个文件替代成最近提交的这个file，而且不会有备份，属于是无法撤销的撤销
