@@ -25,3 +25,16 @@ $ git commit --amend
 最终你只会有一个提交——第二次提交将代替第一次提交的结果。
 git reset HEAD <file>...: 取消暂存(从staged->untracked or modified(before status))，还不知道和git restore --staged 有什么区别（git reset是一个很危险的操作，特别是加上--hard之后）
 git checkout -- <file>...: 取消某个文件的修改（modified->unmodified），回将这个文件替代成最近提交的这个file，而且不会有备份，属于是无法撤销的撤销
+
+## 远程仓库
+![git structure](./pictures/git_structure.jpg)
+git remote(查看远程仓库的服务器) -v(查看url)
+git remote add <shortname> <url>(手动添加远程仓库，clone可以自行添加远程仓库)
+example:
+```bash
+$ git remote add origin https://github.com/itherunder/gitlearn
+$ git pull origin main:main(git pull <远程服务器名(就是git remote -v的结果)> <远程分支名>:<本地分支名>)
+#也可以使用fetch + merge，和pull 是一样的
+$ git fetch origin main(git fetch <远程服务器名> <远程分支名>)
+$ git merge FETCH_HEAD origin/main(git merge <HEAD> <分支名>)
+```
