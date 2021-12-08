@@ -43,5 +43,23 @@ git push -u(这次的<remote> <branch>将会是以后的默认，之后git push 
 git remote show <remote>，它同样会列出远程仓库的 URL 与跟踪分支的信息。 这些信息非常有用，它告诉你正处于 main 分支，并且如果运行 git pull， 就会抓取所有的远程引用，然后将远程 main 分支合并到本地 main 分支。 它也会列出拉取到的所有远程引用。
 
 ## 标签
+### 添加标签
 git tag -a(添加附注标签) v0.1 -m "my version v0.1"
 git show v0.1
+git tag v0.1-lw(添加轻量标签，只需要直接给出标签名字就行了)
+git tag -a(添加附注标签) v0.0 436ddcc(补打标签)
+### push标签到远程仓库
+git push <remote>(origin) <tagname>(v0.0(v0.1,v0.1-lw等，push不会默认将标签也上传，需要显示上传，共享这个标签))
+git push <remote>(origin) --tags(会将所有不在origin上面的标签全部上传)
+### 删除本地以及远程仓库的标签
+git tag -d <tagname>(v0.1-lw(删除标签（本地）))
+git push <remote> :refs/tags/<tagname>(或者下面这个更直接明了的)
+git push <remote> --delete <tagname>
+### 检出标签（切换到标签的指针，当前仓库会处于“分离头指针”的状态），恢复直接 git checkout main
+git checkout v0.0
+在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。 因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支：
+```bash
+$ git checkout -b version2 v2.0.0
+Switched to a new branch 'version2'
+```
+如果在这之后又进行了一次提交，version2 分支就会因为这个改动向前移动， 此时它就会和 v2.0.0 标签稍微有些不同，这时就要当心了。
