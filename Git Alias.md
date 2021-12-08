@@ -10,6 +10,7 @@
 	pl = pull
 	ft = fetch
 	mr = merge
+    tg = tag
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat
 	rank = shortlog -sn --no-merges
 	cm = commit
