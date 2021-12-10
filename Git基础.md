@@ -28,6 +28,7 @@ git checkout -- <file>...: 取消某个文件的修改（modified->unmodified）
 
 ## 远程仓库
 ![git structure](./pictures/git_structure.jpg)
+
 git remote(查看远程仓库的服务器) -v(查看url)
 git remote add <shortname> <url>(手动添加远程仓库，clone可以自行添加远程仓库)
 example:

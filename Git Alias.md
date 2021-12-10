@@ -17,4 +17,6 @@
 	conf = config --list
 	pure = pull --rebase
 	del = restore --staged
+	last = log -1 HEAD
+	unstage = reset HEAD --
 ```
