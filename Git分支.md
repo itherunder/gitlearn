@@ -15,4 +15,7 @@ git push <remote> --delete <branch/tag> 还是用之前删除远程tag 的方式
 ### 合并分支
 ```bash
 git merge branch-learn(可能会有conflicts，手动解决一下就行了)
+# 也可以使用vscode 的git 插件，可以直接accept changes
 ```
+
+### 
