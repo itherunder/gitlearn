@@ -31,3 +31,10 @@ git branch --merged(或者--no-merged 可以查看哪些分支是合并/没有�
 g cob branch-test
 g commit -m "1"
 ```
+
+### 正式rebase
+```bash
+# 切换到main分支，随后提交一个commit
+g co main
+g cmm "3"
+```
