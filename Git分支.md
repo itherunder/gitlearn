@@ -32,6 +32,13 @@ g cob branch-test
 g commit -m "1"
 ```
 
+### 分支rebase测试
+```bash
+# 切换到branch-learn分支，并加上这个测试条目，然后commit一下
+g co branch-learn
+g cmm "2"
+```
+
 ### 正式rebase
 ```bash
 # 切换到main分支，随后提交一个commit
