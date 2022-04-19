@@ -24,4 +24,6 @@
 	del = restore --staged
 	last = log -1 HEAD
 	unstage = reset HEAD --
+	rb = rebase
+	rbc = rb --continue
 ```
