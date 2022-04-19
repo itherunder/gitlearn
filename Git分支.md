@@ -24,3 +24,10 @@ git merge branch-learn(可能会有conflicts，手动解决一下就行了)
 git branch -v(显示每条分支的最后一次提交) -a(显示所有分支，包括远程的以及HEAD)
 git branch --merged(或者--no-merged 可以查看哪些分支是合并/没有合并到当前分支的，已经合并了的可以直接删除分支而不会损失信息)
 ```
+
+### 分支rebase测试
+```bash
+# 切换到branch-learn分支，并加上这个测试条目，然后commit一下
+g co branch-learn
+g cmm "2"
+```
